@@ -1,3 +1,3 @@
-Analog clock using Vue.js
+# Analog clock using Vue.js
 
-I don't own rights to the used font.
+# [Demo](adilet1.github.io/vue-clock)
