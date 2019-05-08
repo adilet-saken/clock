@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Clock</title>
+		<link href="style.css" rel="stylesheet">
+	</head>
+	<body>
+		<div id="app">
+			<div id="ticks">
+				<div v-for="n in 60" class="tick" v-bind:style="'transform: rotate(' + n * 6 + 'deg); width: ' + getWidth(n) + 'px;'"></div>
+			</div>
+			<div id="cover"></div>
+			<div id="marks">
+				<div v-for="n in 60" v-if="n % 5 == 0" class="tick" v-bind:style="'transform: rotate(' + getDegree(n) + 'deg);'">
+					<span class="mark" v-bind:style="'transform: rotate(' + -1 * n * 6 + 'deg);'">{{ n / 5 }}</span>
+				</div>
+			</div>
+			<div id="hands">
+				<transition name="fade">
+					<div id="seconds" class="hand" v-bind:style="'transform: rotate(' + secondsHandDegree + 'deg);'"></div>
+				</transition>
+				<div id="minutes" class="hand" v-bind:style="'transform: rotate(' + minutesHandDegree + 'deg);'"></div>
+				<div id="hours" class="hand" v-bind:style="'transform: rotate(' + hoursHandDegree + 'deg);'"></div>
+			</div>
+			<div id="dot"></div>
+			<div id="controls">
+				<input v-model="hours" style="text-align: right;">
+				<span>:</span>
+				<input v-model="minutes" style="text-align: center;">
+				<span>:</span>
+				<input v-model="seconds" style="text-align: left;">
+			</div>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<script src="script.js"></script>
+	</body>
+</html>
