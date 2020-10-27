@@ -1,3 +1,3 @@
 # Clock
 
-# [Demo](https://adilet1.github.io/clock)
+# [Demo](https://adiletsaken.github.io/clock)
